@@ -56,14 +56,20 @@ Cuando un conjunto de usuarios consulta un enésimo número (superior a 1000000)
 4. Para instalar la aplicación adjunta al Laboratorio, suba la carpeta `FibonacciApp` a un repositorio al cual tenga acceso y ejecute estos comandos dentro de la VM:
 
     `git clone <your_repo>`
+	
+	![](images/part1/clonarRepositorio.png)
 
     `cd <your_repo>/FibonacciApp`
 
     `npm install`
+	
+	![](images/part1/instalarNodeMaquina.png)
 
 5. Para ejecutar la aplicación puede usar el comando `npm FibinacciApp.js`, sin embargo una vez pierda la conexión ssh la aplicación dejará de funcionar. Para evitar ese compartamiento usaremos *forever*. Ejecute los siguientes comando dentro de la VM.
 
-    ` node FibonacciApp.js`
+    ` npm install forever -g`
+	
+	` forever start FibinacciApp.js`
 
 6. Antes de verificar si el endpoint funciona, en Azure vaya a la sección de *Networking* y cree una *Inbound port rule* tal como se muestra en la imágen. Para verificar que la aplicación funciona, use un browser y user el endpoint `http://xxx.xxx.xxx.xxx:3000/fibonacci/6`. La respuesta debe ser `The answer is 8`.
 
