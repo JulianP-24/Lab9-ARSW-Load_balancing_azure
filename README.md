@@ -74,18 +74,47 @@ Cuando un conjunto de usuarios consulta un enésimo número (superior a 1000000)
 6. Antes de verificar si el endpoint funciona, en Azure vaya a la sección de *Networking* y cree una *Inbound port rule* tal como se muestra en la imágen. Para verificar que la aplicación funciona, use un browser y user el endpoint `http://xxx.xxx.xxx.xxx:3000/fibonacci/6`. La respuesta debe ser `The answer is 8`.
 
 ![](images/part1/part1-vm-3000InboudRule.png)
+![](images/part1/ReglaPuerto.png)
+![](images/part1/Puerto3000.png)
+![](images/part1/FuncionamientoCorrecto.png)
+![](images/part1/ConsolaF.png)
+
 
 7. La función que calcula en enésimo número de la secuencia de Fibonacci está muy mal construido y consume bastante CPU para obtener la respuesta. Usando la consola del Browser documente los tiempos de respuesta para dicho endpoint usando los siguintes valores:
     * 1000000
+	Se demnoro 17,04 segundos
+	
+	![](images/part1/1.png)
+	
     * 1010000
+	Se demnoro 17,7 segundos
+	![](images/part1/2.png)
+	
     * 1020000
+		Se demnoro 18,04 segundos
+	![](images/part1/3.png)
+	
     * 1030000
+			Se demnoro 18,55 segundos
+	![](images/part1/4.png)
     * 1040000
+		Se demnoro 19,15 segundos
+	![](images/part1/5.png)
     * 1050000
+			Se demnoro 19,45 segundos
+	![](images/part1/6.png)
     * 1060000
+		Se demnoro 19,73 segundos
+	![](images/part1/7.png)
     * 1070000
+		Se demnoro 20,31 segundos
+	![](images/part1/8.png)
     * 1080000
+		Se demnoro 20,63 segundos
+	![](images/part1/9.png)
     * 1090000    
+		Se demnoro 21,08 segundos
+	![](images/part1/10.png)
 
 8. Dírijase ahora a Azure y verifique el consumo de CPU para la VM. (Los resultados pueden tardar 5 minutos en aparecer).
 
