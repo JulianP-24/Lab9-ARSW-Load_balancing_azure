@@ -344,6 +344,11 @@ Ahora pasamos a crear el grupo de seguridad, con la informacion necesaria
 
 ![](images/part2/part2-vm-create4.png)
 
+   * Asignacion de la maquina virtual 1 (VM1) al balanceador de carga
+   
+   ![](images/part2/vmAlBalanceador.png)
+   Repetimos el mismo procedimiento para las otras dos maquinas virtuales
+
 5. Finalmente debemos instalar la aplicación de Fibonacci en la VM. para ello puede ejecutar el conjunto de los siguientes comandos, cambiando el nombre de la VM por el correcto
 
 ```
