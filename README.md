@@ -231,13 +231,30 @@ Cuando un conjunto de usuarios consulta un enésimo número (superior a 1000000)
      ![](images/part1/graficoB2ms.png)
 
 5. Adjunte imágen del consumo de CPU de la VM e interprete por qué la función consume esa cantidad de CPU.
-![](images/part1/26.png)
+
+	![](images/part1/26.png)
+	
 6. Adjunte la imagen del resumen de la ejecución de Postman. Interprete:
     * Tiempos de ejecución de cada petición.
     * Si hubo fallos documentelos y explique.
 	
-	![](images/part1/tamañob1ls.png)
-![](images/part1/tamañoB2ms.png)
+	* Tamaño estandar b1ls
+	
+	  En este caso como podemos ovservar en la imagen, el tiempo de ejecucion realizado por las pruabas newman fue de 3 minutos con 22s y muestra fallos en 4 de las 10 peticiones
+	  realizadas. Estos fallos se deben a que generan un alto consumo y por la capacidad de la maquina genere un error. Adicionalmente se puede observar la media del tiempo de 
+	  respuesta que en este caso fueron 29,1s, de igual forma el tiempo minimo y maximo.
+	
+	  ![](images/part1/tamañob1ls.png)
+	
+	* Tamaño estandar b2ms
+	
+	  En este caso como podemos ovservar en la imagen, el tiempo de ejecucion realizado por las pruabas newman fue de 2 minutos con 41s, lo cual se redujo considerablemente, esto por que al realizar 
+	  el cambio de tamaño de la maquina a b2ms, esta consiguio mas RAM y mas almacenamiento. De igual forma muestra fallos en 4 de las 10 peticiones realizadas. Estos fallos se deben a que 
+	  generan una alta concurrencia, aun asi la maquina tenga mejor capacidad que en comparacion con la prueba anterior. Adicionalmente se puede observar la media del tiempo de respuesta que en este caso  
+	  fueron 18,1s y el tiempo minimo y maximo.
+	
+	  ![](images/part1/tamañoB2ms.png)
+	
 7. ¿Cuál es la diferencia entre los tamaños `B2ms` y `B1ls` (no solo busque especificaciones de infraestructura)?
 
    * Los de la serie B solo funcionan en linux 
@@ -254,8 +271,12 @@ Cuando un conjunto de usuarios consulta un enésimo número (superior a 1000000)
    * Puede generar sobrecostos donde no se tenga claro la capacidad que se requiere 
 
 10. ¿Hubo mejora en el consumo de CPU o en los tiempos de respuesta? Si/No ¿Por qué?
+
     * Se nota una leve mejora en cuanto a los calculos y en cuanto al uso de la CPU, este se vio disminuido 
+	
 11. Aumente la cantidad de ejecuciones paralelas del comando de postman a `4`. ¿El comportamiento del sistema es porcentualmente mejor?
+
+    * El comportamiento si es porcentualmente mejor ya que presenta menos fallos.
 
 ### Parte 2 - Escalabilidad horizontal
 
