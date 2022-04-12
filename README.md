@@ -202,18 +202,18 @@ Cuando un conjunto de usuarios consulta un enésimo número (superior a 1000000)
 1. ¿Cuántos y cuáles recursos crea Azure junto con la VM?
    ![](images/part1/28.png)
 2. ¿Brevemente describa para qué sirve cada recurso?
-* Disco virtual: Se ultiliza para el almacenamiento de datos 
-* Clave SSH: Es la clave de conexión para el acceso remoto al servicio 
-* Interfaz de red: Sirve para señalar la conexión que se da de manera física, entre los dispositivos y el sistema 
-* Grupo de seguridad de red: Se utiliza para filtrar el tráfico de la red 
-* Dirección IP pública: Permite acceder a la vm y a conexiones 
-* Red virtual: Es la red vlan que se crea para darle conexión a la maquina virtual 
-* Network watcher: Es un observador el cual administra el trafico externo de la red
+   * Disco virtual: Se ultiliza para el almacenamiento de datos 
+   * Clave SSH: Es la clave de conexión para el acceso remoto al servicio 
+   * Interfaz de red: Sirve para señalar la conexión que se da de manera física, entre los dispositivos y el sistema 
+   * Grupo de seguridad de red: Se utiliza para filtrar el tráfico de la red 
+   * Dirección IP pública: Permite acceder a la vm y a conexiones 
+   * Red virtual: Es la red vlan que se crea para darle conexión a la maquina virtual 
+   * Network watcher: Es un observador el cual administra el trafico externo de la red
 3. ¿Al cerrar la conexión ssh con la VM, por qué se cae la aplicación que ejecutamos con el comando `npm FibonacciApp.js`? ¿Por qué debemos crear un *Inbound port rule* antes de acceder al servicio?
 
-* Si se utiliza el comando npm FibonacciApp.js y la máquina se suspende por inactividad, la aplicación dejaría de correr, al igual que si existe un error en la máquina virtual. Por eso se utiliza forever start FibonacciApp.js.
+   * Si se utiliza el comando npm FibonacciApp.js y la máquina se suspende por inactividad, la aplicación dejaría de correr, al igual que si existe un error en la  máquina virtual. Por eso se utiliza forever start FibonacciApp.js.
 
-* El Inbound port rule sirve para permitir la entrada al servicio que se está levantando. En este caso la aplicación corre por el puerto 3000, así que es este el que se debe abrir.
+   * El Inbound port rule sirve para permitir la entrada al servicio que se está levantando. En este caso la aplicación corre por el puerto 3000, así que es este el que se debe abrir.
 
 4. Adjunte tabla de tiempos e interprete por qué la función tarda tando tiempo.
 
@@ -227,21 +227,21 @@ Cuando un conjunto de usuarios consulta un enésimo número (superior a 1000000)
 ![](images/part1/tamañoB2ms.png)
 7. ¿Cuál es la diferencia entre los tamaños `B2ms` y `B1ls` (no solo busque especificaciones de infraestructura)?
 
-* Los de la serie B solo funcionan en linux 
-* B2ms: Tiene 2 vCPUs, 8 GB de RAM, 1 data disk y cuesta $ 60.74 dólares mensuales.
-* B1ls: Tiene 1 vCPUs, 0.5 GB de RAM, 1 data disk y cuesta $ 3.80 dólares mensuales.
-* 
+   * Los de la serie B solo funcionan en linux 
+   * B2ms: Tiene 2 vCPUs, 8 GB de RAM, 1 data disk y cuesta $ 60.74 dólares mensuales.
+   * B1ls: Tiene 1 vCPUs, 0.5 GB de RAM, 1 data disk y cuesta $ 3.80 dólares mensuales.
+
 8. ¿Aumentar el tamaño de la VM es una buena solución en este escenario?, ¿Qué pasa con la FibonacciApp cuando cambiamos el tamaño de la VM?
-* Si bien aumentar la capacidad de procesamiento a la máquina ayuda a bajar el tiempo de ejecución de la aplicación, no fue un cambio tan significativo, y la relacion costo beneficio de la maquina B1LS no se compara a la B2ms 
+   * Si bien aumentar la capacidad de procesamiento a la máquina ayuda a bajar el tiempo de ejecución de la aplicación, no fue un cambio tan significativo, y la relacion costo beneficio de la maquina B1LS no se compara a la B2ms 
 
 
 
 9. ¿Qué pasa con la infraestructura cuando cambia el tamaño de la VM? ¿Qué efectos negativos implica?
 
-* Puede generar sobrecostos donde no se tenga claro la capacidad que se requiere 
+   * Puede generar sobrecostos donde no se tenga claro la capacidad que se requiere 
 
 10. ¿Hubo mejora en el consumo de CPU o en los tiempos de respuesta? Si/No ¿Por qué?
-* Se nota una leve mejora en cuanto a los calculos y en cuanto al uso de la CPU, este se vio disminuido 
+    * Se nota una leve mejora en cuanto a los calculos y en cuanto al uso de la CPU, este se vio disminuido 
 11. Aumente la cantidad de ejecuciones paralelas del comando de postman a `4`. ¿El comportamiento del sistema es porcentualmente mejor?
 
 ### Parte 2 - Escalabilidad horizontal
