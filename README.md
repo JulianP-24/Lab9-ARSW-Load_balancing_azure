@@ -217,14 +217,16 @@ Cuando un conjunto de usuarios consulta un enésimo número (superior a 1000000)
 
 4. Adjunte tabla de tiempos e interprete por qué la función tarda tando tiempo.
 
-  * Tabla de los tiempos dados con el tamaño de la maquina en b1ls 
-    Para este caso la funcion tarda mucho debido a la capacidad de procesamiento dada por el tamaño de la maquina que esta tiene.
+   * Tabla de los tiempos dados con el tamaño de la maquina en b1ls 
+   
+     Para este caso la funcion tarda mucho debido a la capacidad de procesamiento dada por el tamaño de la maquina que esta tiene.
   
      ![](images/part1/graficoB1ls.png)
   
-  * Tabla de los tiempos dados con el tamaño de la maquina en b2ms
-    En este caso se nota una mejora en cuanto al tiempo ya que al cambiar de tamaño de b1ls a b2ms, la capacidad de procesamiento mejoro en comparacion al anterior. Esto porque 
-	b2ms tiene mas RAM y mas almacenamiento que b1ls.
+   * Tabla de los tiempos dados con el tamaño de la maquina en b2ms
+   
+     En este caso se nota una mejora en cuanto al tiempo ya que al cambiar de tamaño de b1ls a b2ms, la capacidad de procesamiento mejoro en comparacion al anterior. Esto porque 
+	 b2ms tiene mas RAM y mas almacenamiento que b1ls.
   
      ![](images/part1/graficoB2ms.png)
 
