@@ -75,9 +75,15 @@ Cuando un conjunto de usuarios consulta un enésimo número (superior a 1000000)
 
 ![](images/part1/part1-vm-3000InboudRule.png)
 ![](images/part1/ReglaPuerto.png)
-![](images/part1/Puerto3000.png)
-![](images/part1/FuncionamientoCorrecto.png)
-![](images/part1/ConsolaF.png)
+
+ * Iniciamos la aplicacion en la maquina virtual
+   ![](images/part1/Puerto3000.png)
+  
+ * Verificamos en el navegador, que este funcionando obteniendo como respuesta 8
+   ![](images/part1/FuncionamientoCorrecto.png)
+  
+ * Revisamos la consola de la maquina virtual
+   ![](images/part1/ConsolaF.png)
 
 
 7. La función que calcula en enésimo número de la secuencia de Fibonacci está muy mal construido y consume bastante CPU para obtener la respuesta. Usando la consola del Browser documente los tiempos de respuesta para dicho endpoint usando los siguintes valores:
@@ -131,9 +137,9 @@ Cuando un conjunto de usuarios consulta un enésimo número (superior a 1000000)
 		![](images/part1/13.png)
     * Diríjase hasta la ruta `FibonacciApp/postman` en una maquina diferente a la VM.
     * Para el archivo `[ARSW_LOAD-BALANCING_AZURE].postman_environment.json` cambie el valor del parámetro `VM1` para que coincida con la IP de su VM.
-	
-    * Ejecute el siguiente comando.
 	![](images/part1/14.png)
+    * Ejecute el siguiente comando.
+
     ```
     newman run ARSW_LOAD-BALANCING_AZURE.postman_collection.json -e [ARSW_LOAD-BALANCING_AZURE].postman_environment.json -n 10 &
     newman run ARSW_LOAD-BALANCING_AZURE.postman_collection.json -e [ARSW_LOAD-BALANCING_AZURE].postman_environment.json -n 10
@@ -181,9 +187,10 @@ Cuando un conjunto de usuarios consulta un enésimo número (superior a 1000000)
     * 1090000    
 			Se demnoro 16,93 segundos
 	![](images/part1/25.png)
-	
-		![](images/part1/26.png)
-		![](images/part1/27.png)
+
+    * Verificamos el consumo en informacion general
+	![](images/part1/26.png)
+	![](images/part1/27.png)
 		
 
 12. Evalue el escenario de calidad asociado al requerimiento no funcional de escalabilidad y concluya si usando este modelo de escalabilidad logramos cumplirlo.
@@ -193,7 +200,7 @@ Cuando un conjunto de usuarios consulta un enésimo número (superior a 1000000)
 **Preguntas**
 
 1. ¿Cuántos y cuáles recursos crea Azure junto con la VM?
-			![](images/part1/28.png)
+   ![](images/part1/28.png)
 2. ¿Brevemente describa para qué sirve cada recurso?
 * Disco virtual: Se ultiliza para el almacenamiento de datos 
 * Clave SSH: Es la clave de conexión para el acceso remoto al servicio 
