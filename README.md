@@ -314,13 +314,31 @@ Ahora vamos a crear 3 VMs (VM1, VM2 y VM3) con direcciones IP públicas standar 
 
 ![](images/part2/part2-vm-create1.png)
 
+A continuacion se van a crear tres maquinas virtuales, con la unica deferencia en que la zona de disponibilidad no es la misma
+
+![](images/part2/creacionMaquina1.png)
+
+![](images/part2/creacionMaquina2.png)
+
+![](images/part2/creacionMaquina3.png)
+
+El proceso es lo mismo para las otras dos maquinas virtuales
+
 2. En la configuración de networking, verifique que se ha seleccionado la *Virtual Network*  y la *Subnet* creadas anteriormente. Adicionalmente asigne una IP pública y no olvide habilitar la redundancia de zona.
 
 ![](images/part2/part2-vm-create2.png)
 
+Verificamos que la red virtual y sub red seleccionada sea la correcta
+
+![](images/part2/verificacionSubred.png)
+
 3. Para el Network Security Group seleccione "avanzado" y realice la siguiente configuración. No olvide crear un *Inbound Rule*, en el cual habilite el tráfico por el puerto 3000. Cuando cree la VM2 y la VM3, no necesita volver a crear el *Network Security Group*, sino que puede seleccionar el anteriormente creado.
 
 ![](images/part2/part2-vm-create3.png)
+
+Ahora pasamos a crear el grupo de seguridad, con la informacion necesaria
+
+![](images/part2/grupoSeguridad.png)
 
 4. Ahora asignaremos esta VM a nuestro balanceador de carga, para ello siga la configuración de la siguiente imágen.
 
