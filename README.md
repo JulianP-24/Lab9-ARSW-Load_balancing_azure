@@ -459,8 +459,29 @@ newman run ARSW_LOAD-BALANCING_AZURE.postman_collection.json -e [ARSW_LOAD-BALAN
 * ¿Cuál es el propósito de la *Load Balancing Rule*? 
 
   Se usa para definir cómo se distribuye el tráfico entrante a todas las instancias del grupo de back-end. Las reglas de equilibrio de carga asignan una configuración de IP de front-end y un puerto determinados a varios puertos y direcciones IP de back-end. Un ejemplo sería una regla creada en el puerto 80 para equilibrar la carga del tráfico web.
+  Usa un modo de distribución basado en hash de cinco tuplas.
+
+  La tupla cinco se compone de:
+
+   * IP de origen
+   * Puerto de origen
+   * IP de destino
+   * Puerto de destino
+   * Tipo de protocolo
   
 * ¿Qué tipos de sesión persistente existen, por qué esto es importante y cómo puede afectar la escalabilidad del sistema?.
+
+  * Basado en Hash
+  
+    El hash se utiliza para enrutar el tráfico a instancias de back-end saludables dentro del grupo de back-end. El algoritmo proporciona adherencia solo dentro de una sesión de transporte. Cuando el cliente inicia una nueva sesión desde la misma IP de origen, el puerto de origen cambia y hace que el tráfico vaya a una instancia de back-end diferente. Para configurar la distribución basada en hash, debe seleccionar que la persistencia de la sesión sea Ninguna en el Portal de Azure. Esto especifica que las solicitudes sucesivas del mismo cliente pueden ser manejadas por cualquier máquina virtual.
+	
+  * Persistencia de Sesion
+  
+    La persistencia de sesión también se conoce como afinidad de sesión, afinidad de IP de origen o afinidad de IP de cliente. Este modo de distribución utiliza un hash de dos tuplas (IP de origen e IP de destino) o de tres tuplas (IP de origen, IP de destino y tipo de protocolo) para enrutar a instancias de back-end. Cuando se utiliza la persistencia de sesión, las conexiones del mismo cliente irán a la misma instancia de back-end dentro del grupo de back-end.
+    El modo de persistencia de sesión tiene dos tipos de configuración:
+
+     * IP de cliente (2 tuplas): especifica que las solicitudes sucesivas de la misma dirección IP de cliente serán gestionadas por la misma instancia back-end.
+     * IP de cliente y protocolo (3 tuplas): especifica que las solicitudes sucesivas de la misma dirección IP de cliente y la misma combinación de protocolo serán controladas por la misma instancia de back-end.
    
 * ¿Qué es una *Virtual Network*? 
 
@@ -490,6 +511,8 @@ newman run ARSW_LOAD-BALANCING_AZURE.postman_collection.json -e [ARSW_LOAD-BALAN
   
 * Informe de newman 1 (Punto 2)
 * Presente el Diagrama de Despliegue de la solución.
+
+  ![](images/part2/despliegue.png)
 
 
 
